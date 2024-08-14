@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <p>  &lt; Lais Talita /&gt; </p>
+    </header>
+    <main>
+        <section>
+                <div id="info1">
+                    <img id="imagem"   src="" alt="">
+                    <p id="descricao"> </p>
+
+                    <button id="b1"> <a href="index.html">voltar</a></button>
+                </div>
+          
+
+         
+               
+                 <div id="info2">
+                     <h1>Escolha uma data para ver o espaço !</h1>
+                     <form action="" id="form">
+                        <label for="dataS"> <p>Data:</p> </label>
+                        <input type="date" id="dataS" > 
+                        <br>
+                        <button onclick="chama(event)"  type="submit"> <p>Ver</p> </button>
+                     </form>
+                 </div>
+        </section>
+
+       
+
+        
+    </main>
+
+    <footer> 
+        <div id="d1">
+            <h2> Projeto: visualizador de dias</h2>
+            <p> Este projeto utiliza APIs da NASA</p>
+        </div>
+
+    </footer>
+
+
+<script>
+    async function chama(event) {
+        event.preventDefault()
+        
+        document.getElementById('info2').style.display='none'
+        document.getElementById('info1').style.display='block'
+
+            var chave = 'ZjnGILroRPYKnqpQX3uJxmrq8Hw9dU9nVsaRffKn'
+            var dataSele = document.getElementById('dataS').value
+            
+            var url = ` https://api.nasa.gov/planetary/apod?date=${dataSele}&api_key=${chave}`
+
+        try{
+            var resp =await fetch(url)
+            var data =  await resp.json()
+
+            document.getElementById('descricao').textContent =data.explanation
+            document.getElementById('imagem').src =data.url
+            document.getElementById('imagem').alt = data.title
+        }
+        catch (error){
+            console.error ('Erro ao buscar a imagem')
+        }
+    
+    }
+
+</script>
+    
+</body>
+</html>

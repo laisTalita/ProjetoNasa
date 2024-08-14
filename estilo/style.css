@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto&display=swap');
+
+:root{
+    --var1: "Roboto", sans-serif;
+    --var2: "Montserrat", sans-serif;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    min-width: 310px;
+    background-image: url("../imagens/nasa.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    background-color: rgba(0, 0, 0, 0.179);
+    flex: 1;
+}
+header{
+    height: 43px;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 1px  solid rgba(255, 255, 255, 0.129) ;
+}
+header p{
+    padding: 17px 0px 0.1% 10px;
+}
+ p ,h1,a { 
+    font-family: var(--var2);
+    font-size: 1.3em 
+ }
+
+#info1{
+    margin: 40px auto;
+    background-color: rgba(0, 0, 0, 0.846);
+    display: none;
+    padding: 8px;
+    overflow: auto; 
+    width: 90%;
+    border: 0.2px solid rgba(172, 120, 9, 0.209) ;
+}
+#info2{ 
+   margin:200px auto;
+   width: 70%;
+   text-align: center;
+}
+#info2 h1{
+    letter-spacing: 0.05em;
+    font-size: 1.6em;
+    text-shadow: 2px -2px 6px black;
+}
+#info2 p{
+    display: inline-block;
+    text-shadow: 2px -2px 6px black;
+}
+#info1 p{
+    margin: 2% 0px 1px 3%;
+    text-indent: 1em;
+    letter-spacing: 0.1em;
+    font-family: var(--var1);
+    font-size: 1.1em;
+}
+#info1 img{
+    width: 45%;
+    float: right;
+    margin: 1% 4% 1px 10px ;
+    min-width: 300px;
+}
+#b1{
+    margin: 4% 4%;
+    
+}
+input[type = date]{
+    padding: 2px;
+    font-size: 1.1em;
+    width:10% ;
+    min-width: 140px;
+    text-align: center;
+}
+input[type = date],button{
+    border-radius: 10px;
+    font-family: var(--var1);
+    margin-top: 10px;
+
+}
+button{
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    padding: 1px;
+    color: white;
+    width: 17%;
+    min-width: 160px;
+    background-color: transparent;
+    border: 2px solid rgb(172, 120, 9);
+  
+}
+button:hover{
+    background-color: rgba(154, 153, 153, 0.173);
+}
+a{
+    text-decoration: none;
+    color: white;
+  
+}
+footer{
+    background-color: rgba(0, 0, 0, 0.286);
+}
+h2{
+    font-size: 1.2em;
+    font-family: var(--var1);
+}
+footer p{
+    font-family: var(--var1);
+    font-size: 1em;
+}
+#d1{
+ margin-left: 10px;
+ padding: 5px 0px;
+}
+@media(max-width:700px){
+    
+ p,a{
+    font-size: 1.1em;
+ }
+ #info2 h1{
+    font-size: 1.2em;
+ }
+    
+}
