@@ -11,12 +11,10 @@
 
 body{
     min-width: 310px;
-    background-image: url("../imagens/nasa.jpeg");
-    background-repeat: no-repeat;
+    background: black url("../imagens/nasa.jpeg") no-repeat fixed ;
     background-size: cover;
     height: 100vh;
     color: white;
-    background-attachment: fixed;
     display: flex;
     flex-direction: column;
 }
