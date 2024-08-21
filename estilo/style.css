@@ -132,8 +132,11 @@ footer p{
  #info2 h1{
     font-size: 1.2em;
  }
- #info,#info2{
+ #info{
     margin: 20% auto;
+ }
+ #info2{
+    margin: 40% auto;
  }
     
 }
