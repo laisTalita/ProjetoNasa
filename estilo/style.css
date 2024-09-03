@@ -37,7 +37,7 @@ header p{
  }
 
 #info1{
-    margin: 8% auto;
+     margin: 10% auto; 
     background-color: rgba(0, 0, 0, 0.846);
     display: none;
     padding: 8px;
@@ -45,8 +45,9 @@ header p{
     width: 90%;
     border: 0.2px solid rgba(172, 104, 9, 0.209) ;
 }
+
 #info2{ 
-   margin:13% auto;
+    margin:15% auto; 
    width: 70%;
    text-align: center;
 }
