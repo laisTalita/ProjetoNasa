@@ -8,7 +8,6 @@
     padding: 0px;
     margin: 0px;
 }
-
 body{
     min-width: 320px;
     background: black url("../imagens/nasa.jpeg") no-repeat fixed ;
@@ -22,6 +21,9 @@ body{
 main{
     background-color: rgba(0, 0, 0, 0.414);
     flex: 1;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
 }
 header{
     height: 43px;
@@ -35,20 +37,17 @@ header p{
     font-family: var(--var2);
     font-size: 1.3em 
  }
-
 #info1{
-     margin: 10% auto; 
+    margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.846);
     display: none;
     padding: 8px;
     overflow: auto; 
-    width: 90%;
+    width: 77%;
     border: 0.2px solid rgba(172, 104, 9, 0.209) ;
 }
-
 #info2{ 
-    margin:15% auto; 
-   width: 70%;
+   width: 100%;
    text-align: center;
 }
 #info2 h1{
@@ -74,14 +73,12 @@ header p{
     min-width: 310px;
 }
 #b1{
-    margin: 4% 4%;
-    
+    margin: 4% 4%;   
 }
 input[type = date]{
-    padding: 2px;
+    padding: 5px;
     font-size: 1.1em;
-    width:10% ;
-    min-width: 140px;
+    min-width: 150px;
     text-align: center;
 }
 input[type = date],button{
@@ -97,8 +94,8 @@ button{
     color: white;
     width: 17%;
     min-width: 160px;
-    background-color: transparent;
-    border: 2px solid  rgba(205, 124, 11, 0.528);
+    background-color: rgba(255, 255, 255, 0.114);
+    border: 2px solid  rgba(205, 124, 11, 0.675);
     transition: 0.5s;
   
 }
@@ -108,7 +105,6 @@ button:hover{
 a{
     text-decoration: none;
     color: white;
-  
 }
 footer{
     background-color: rgba(0, 0, 0, 0.353);
