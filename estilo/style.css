@@ -43,11 +43,12 @@ header p{
     display: none;
     padding: 8px;
     overflow: auto; 
-    width: 77%;
+    width: 80%;
     border: 0.2px solid rgba(172, 104, 9, 0.209) ;
 }
 #info2{ 
-   width: 100%;
+    margin: 0 auto;
+   width: 70%;
    text-align: center;
 }
 #info2 h1{
@@ -76,9 +77,10 @@ header p{
     margin: 4% 4%;   
 }
 input[type = date]{
-    padding: 5px;
+    padding: 2px;
     font-size: 1.1em;
-    min-width: 150px;
+
+    min-width: 140px;
     text-align: center;
 }
 input[type = date],button{
