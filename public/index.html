@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo/style.css">
-    <title>Document</title>
+    <title>NASA</title>
 </head>
 
 <body>
@@ -19,11 +19,7 @@
 
                     <button id="b1" onclick="window.location.href='index.html'" >Voltar </button>
                 </div>
-          
-
-         
-               
-                 <div id="info2">
+                <div id="info2">
                      <h1>Escolha uma data para ver o espaço !</h1>
                      <form action="" id="form">
                         <label for="dataS"> <p>Data:</p> </label>
@@ -31,12 +27,8 @@
                         <br>
                         <button onclick="chama(event)"  type="submit"> <p>Ver</p> </button>
                      </form>
-                 </div>
-        </section>
-
-       
-
-        
+                </div>
+        </section>   
     </main>
 
     <footer> 
@@ -44,27 +36,25 @@
             <h2> Projeto: Foto astronômica do dia </h2>
             <p> Este projeto utiliza API da NASA</p>
         </div>
-
     </footer>
 
 
 <script>
     async function chama(event) {
         event.preventDefault()
-        
         document.getElementById('info2').style.display='none'
         document.getElementById('info1').style.display='block'
-        
+        var dataSele = document.getElementById('dataS').value
 
-            var chave = 'ZjnGILroRPYKnqpQX3uJxmrq8Hw9dU9nVsaRffKn'
-            var dataSele = document.getElementById('dataS').value
-            
-            var url = ` https://api.nasa.gov/planetary/apod?date=${dataSele}&api_key=${chave}`
 
+        const respo = await fetch('/api/chave')
+        const dat = await respo.json()
+        const chave = dat.chave
+
+        var url = `https://api.nasa.gov/planetary/apod?date=${dataSele}&api_key=${chave}`
         try{
             var resp =await fetch(url)
             var data =  await resp.json()
-
             document.getElementById('descricao').textContent =data.explanation
             document.getElementById('imagem').src =data.url
             document.getElementById('imagem').alt = data.title
@@ -72,7 +62,6 @@
         catch (error){
             console.error ('Erro ao buscar a imagem')
         }
-    
     }
 
 </script>

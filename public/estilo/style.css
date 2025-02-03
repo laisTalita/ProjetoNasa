@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto&display=swap');
-
 :root{
     --var1: "Roboto", sans-serif;
     --var2: "Montserrat", sans-serif;
@@ -8,8 +7,12 @@
     padding: 0px;
     margin: 0px;
 }
+body,html{
+    width: 100%;
+    height: 100vh;
+}
 body{
-    min-width: 320px;
+    /*min-width: 320px;*/
     background: black url("../imagens/nasa.jpeg") no-repeat fixed ;
     background-size: cover;
     background-position: center top;
@@ -79,7 +82,6 @@ header p{
 input[type = date]{
     padding: 2px;
     font-size: 1.1em;
-
     min-width: 140px;
     text-align: center;
 }
@@ -87,7 +89,6 @@ input[type = date],button{
     border-radius: 10px;
     font-family: var(--var1);
     margin-top: 10px;
-
 }
 button{
     letter-spacing: 0.1em;
@@ -99,7 +100,6 @@ button{
     background-color: rgba(255, 255, 255, 0.114);
     border: 2px solid  rgba(205, 124, 11, 0.675);
     transition: 0.5s;
-  
 }
 button:hover{
     background-color:  rgba(141, 84, 5, 0.39);
@@ -123,8 +123,7 @@ footer p{
  margin-left: 10px;
  padding: 5px 0px;
 }
-@media(max-width:600px){
-    
+@media(max-width:600px){  
  p,a{
     font-size: 1em;
  }
@@ -137,5 +136,4 @@ footer p{
  #info2{
     margin: 40% auto
  }
-    
 }
