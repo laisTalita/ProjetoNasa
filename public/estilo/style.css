@@ -76,13 +76,17 @@ header p{
     margin: 1% 4% 1px 10px ;
     min-width: 310px;
 }
-#b1{
+.b1{
+    font-size: 1.2em;
+    padding: 5px;
     margin: 4% 4%;   
 }
 input[type = date]{
-    padding: 2px;
-    font-size: 1.1em;
-    min-width: 140px;
+    background-color: transparent;
+    color: white;
+    padding: 6px;
+    font-size: 1.2em;
+    min-width: 160px;
     text-align: center;
 }
 input[type = date],button{
