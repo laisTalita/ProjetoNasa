@@ -9,15 +9,16 @@
 
 <body>
     <header>
-        <p>  Lais Talita </p>
+        <div>
+            <p> Lais Talita </p>
+        </div>
     </header>
     <main>
         <section>
                 <div id="info1">
                     <img id="imagem" src="" alt="">
                     <p id="descricao"></p>
-
-                    <button class="b1" onclick="window.location.href='index.html'" >Voltar </button>
+                    <button class="b1" onclick="window.location.href='index.html'">Voltar</button>
                 </div>
                 <div id="info2">
                      <h1>Escolha uma data para ver o espaço !</h1>
@@ -40,31 +41,36 @@
 
 
 <script>
-    async function chama(event) {
-        event.preventDefault()
-        document.getElementById('info2').style.display='none'
-        document.getElementById('info1').style.display='block'
-        var dataSele = document.getElementById('dataS').value
+async function chama(event) {
+    event.preventDefault();
 
-
-        const respo = await fetch('/api/chave')
-        const dat = await respo.json()
-        const chave = dat.chave
-
-        var url = `https://api.nasa.gov/planetary/apod?date=${dataSele}&api_key=${chave}`
-        try{
-            var resp =await fetch(url)
-            var data =  await resp.json()
-            document.getElementById('descricao').textContent =data.explanation
-            document.getElementById('imagem').src =data.url
-            document.getElementById('imagem').alt = data.title
-        }
-        catch (error){
-            console.error ('Erro ao buscar a imagem')
-        }
+    const dataSele = document.getElementById('dataS').value;
+    if (!dataSele) {
+        alert('Por favor, escolha uma data.');
+        return;
     }
+   document.getElementById('info2').style.display = 'none';
+    document.getElementById('info1').style.display = 'block';
 
+    try {
+        const resp = await fetch(`/api/apod?date=${dataSele}`);
+        if (!resp.ok) {
+            throw new Error('Erro ao buscar dados da NASA');
+        }
+        const data = await resp.json();
+
+      document.getElementById('descricao').textContent = data.explanation || 'Sem descrição';
+        document.getElementById('imagem').src = data.url || '';
+        document.getElementById('imagem').alt = data.title || 'Imagem da NASA';
+
+    } catch (error) {
+        console.error(error);
+        alert('Não foi possível carregar a imagem. Tente outra data.');
+        
+        document.getElementById('info2').style.display = 'block';
+        document.getElementById('info1').style.display = 'none';
+    }
+}
 </script>
-    
 </body>
 </html>
